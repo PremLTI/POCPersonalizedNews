@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.20.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.9.1"
+    },
+    "version": "1.17.2",
+    "libraryName": "pgnew-carousel-on-menu-items",
+    "libraryId": "c9eaa906-ccb4-4974-a292-4f88743a2b79",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "pgnewCarouselOnMenuItems",
+    "solutionShortDescription": "pgnewCarouselOnMenuItems description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Basic"
+  }
+}

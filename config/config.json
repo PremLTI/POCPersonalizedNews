@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "pg-news-carousel-on-menu-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/pgNewsCarouselOnMenu/PgNewsCarouselOnMenuAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/pgNewsCarouselOnMenu/PgNewsCarouselOnMenuAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PgNewsCarouselOnMenuAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/pgNewsCarouselOnMenu/loc/{locale}.js"
+  }
+}

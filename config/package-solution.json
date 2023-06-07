@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "PNG-Site-Viva-POCPromoteToGlobNews-solution",
+    "id": "c9eaa906-ccb4-4974-a292-4f88743a2b79",
+    "version": "2.2.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.17.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "pgnewCarouselOnMenuItems description"
+      },
+      "longDescription": {
+        "default": "pgnewCarouselOnMenuItems description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "pgnew-carousel-on-menu-items Feature",
+        "description": "The feature that activates elements of the pgnew-carousel-on-menu-items solution.",
+        "id": "1802149b-6ceb-458a-aca6-eec0fb91efc5",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/PNG-Site-Viva-POCPromoteToGlobalNews-solution.sppkg"
+  }
+}

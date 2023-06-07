@@ -1,0 +1,285 @@
+splict Global and Local Seperatly
+-----------------------------------
+{
+    "schema": "http=//adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "PG Daily News",
+            "wrap": true,
+            "horizontalAlignment": "Left",
+            "fontType": "Default",
+            "weight": "Bolder",
+            "size": "ExtraLarge",
+            "spacing": "ExtraLarge"
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "style": "emphasis",
+            "$data": "${pgGlobalNews}",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "${title}",
+                    "wrap": true,
+                    "size": "Medium",
+                    "weight": "Bolder"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "bleed": true,
+                            "height": "stretch",
+                            "minHeight": "240px",
+                            "horizontalAlignment": "Center",
+                            "spacing": "Medium",
+                            "backgroundImage": {
+                                "url": "${pgCarouselImage}",
+                                "horizontalAlignment": "Center",
+                                "verticalAlignment": "Center"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "${newsDescription}",
+                    "wrap": true
+                    
+                }
+                ,
+                {
+                    "type": "ActionSet",
+                    "actions": [
+                        {
+                            "type": "Action.OpenUrl",
+                            "title": "Read Full News",
+                            "url": "${pgExternalLink}",
+                            "style": "positive"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "style": "emphasis",
+            "$data": "${pgLocalNews}",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "${title}",
+                    "wrap": true,
+                    "size": "Medium",
+                    "weight": "Bolder"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${newsDescription}",
+                                    "wrap": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "100px",
+                            "minHeight": "50px",
+                            "backgroundImage": {
+                                "url": "${pgCarouselImage}"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "ActionSet",
+                    "actions": [
+                        {
+                            "type": "Action.OpenUrl",
+                            "title": "Read Full News",
+                            "url": "${pgExternalLink}",
+                            "style": "positive"
+                        },
+                        {
+                            "type": "Action.Submit",
+                            "title": "${if(equals(isRequested,true), 'Requested initiated for Promote to Global', 'Promote to Global')}",
+                            "data": {
+                                "title": "${title}",
+                                "id": "${id}",
+                                "pageName": "${title}",
+                                "pageURL": "${pgExternalLink}"
+                            },
+                            "isEnabled": "${if(equals(isRequested,true), false, true)}",
+                            "$when": "${pgLocation != 'Global'}",
+                            "style": "destructive"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}
+
+================================
+
+
+
+
+
+
+
+
+
+specific image not worked one
+==========
+{
+          "type": "Container",
+          "backgroundImage": {
+              "url": "https://pgone.sharepoint.com.rproxy.goskope.com/:i:/r/sites/PGDailyNews/SiteAssets/Images/2023/Apr/IOH%20Home%204.21.23%20BB.png",
+              "horizontalAlignment": "Center",
+              "verticalAlignment": "Center"
+          },
+          "bleed": true,
+          "height": "stretch",
+          "minHeight": "240px",
+          "horizontalAlignment": "Center",
+          "spacing": "Medium"
+      },
+      {
+        "type": "ActionSet",
+        "actions": [
+            {
+                "type": "Action.Submit",
+                "id": "stages",
+                "title": "Learn more on the Link",
+                "data": {
+                    "id": "stages"
+                }
+            }
+        ],
+        "spacing": "Medium"
+    }
+
+
+
+======================
+
+{
+    "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+      {
+        "type": "Container",
+        "separator": "true",
+        "$data": "${pgnewsall}",
+        "items": [
+          {
+            "type": "TextBlock",
+            "text": "${title}",
+            "wrap": true
+          },
+          {
+            "type": "Image",
+            "url": "${pgCarouselImage}",
+            "horizontalAlignment": "Center",
+            "size": "Medium",
+            "Height":"Automatic"
+          }
+        ],
+        "selectAction": {
+          "type": "Action.OpenUrl",
+          "url": "${pgExternalLink}"
+        }
+      }
+    ]
+  }
+
+
+## 
+
+{
+  "schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+      {
+          "type": "ColumnSet",
+          "$data": "${pgnewsall}",
+          "separator": true,
+          "columns": [
+              {
+                  "type": "Column",
+                  "width": "60px",
+                  "horizontalAlignment": "Left",
+                  "verticalContentAlignment": "Top",
+                  "items": [
+                      {
+                          "type": "Image",
+                          "size": "Small",
+                          "url": "${pgCarouselImage}"
+                      }
+                  ]
+              },
+              {
+                  "type": "Column",
+                  "width": "stretch",
+                  "verticalContentAlignment": "Center",
+                  "items": [
+                      {
+                          "type": "TextBlock",
+                          "text": "${title}",
+                          "horizontalAlignment": "Left",
+                          "size": "Medium"
+                      },
+                      {
+                          "type": "TextBlock",
+                          "text": "${pgLocation}",
+                          "horizontalAlignment": "Left",
+                          "size": "Small",
+                          "wrap": true,
+                          "maxLines": 3
+                      }
+                  ]
+              },
+              {
+                  "type": "Column",
+                  "width": "auto",
+                  "verticalContentAlignment": "Top",
+                  "items": [
+                      {
+                          "type": "ActionSet",
+                          "horizontalAlignment": "right",
+                          "actions": [
+                              {
+                                  "type": "Action.OpenUrl",
+                                  "title": "🌐",
+                                  "url": "${pgExternalLink}",
+                                  "style": "positive"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "spacing": "Large"
+      }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}
+
+#####
+

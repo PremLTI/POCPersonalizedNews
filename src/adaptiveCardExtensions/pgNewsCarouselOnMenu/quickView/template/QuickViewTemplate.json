@@ -1,0 +1,162 @@
+{
+    "schema": "http=//adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "PG Daily News",
+            "wrap": true,
+            "horizontalAlignment": "Left",
+            "fontType": "Default",
+            "weight": "Bolder",
+            "size": "ExtraLarge",
+            "spacing": "ExtraLarge"
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "style": "emphasis",
+            "$data": "${pgGlobalNews}",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "${title}",
+                    "wrap": true,
+                    "size": "Medium",
+                    "weight": "Bolder"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "bleed": true,
+                            "height": "stretch",
+                            "minHeight": "250px",
+                            "horizontalAlignment": "Center",
+                            "spacing": "Medium",
+                            "backgroundImage": {
+                                "url": "${pgCarouselImage}",
+                                "horizontalAlignment": "Center",
+                                "verticalAlignment": "Center"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "${newsDescription}",
+                    "wrap": true,
+                    "maxLines": 4
+                    
+                }
+                ,
+                {
+                    "type": "ActionSet",
+                    "actions": [
+                        {
+                            "type": "Action.OpenUrl",
+                            "title": "Read Full News",
+                            "url": "${pgLink}",
+                            "style": "positive"
+                        },
+                        {
+                            "type": "Action.OpenUrl",
+                            "title": "Source Quick Link",
+                            "url": "${pgQuickLink}",
+                            "style": "destructive",
+                            "$when": "${pgQuickLink != null}"
+                        },
+                        {
+                            "type": "Action.Submit",
+                            "title": "${if(equals(isRequested,true), 'Request initiated for Promote to Global', 'Promote to Global')}",
+                            "data": {
+                                "title": "${title}",
+                                "id": "${id}",
+                                "pageName": "${title}",
+                                "pageURL": "${pgLink}"
+                            },
+                            "isEnabled": "${if(equals(isRequested,true), false, true)}",
+                            "$when": "${pgLocation != 'Global'}",
+                          
+                            "iconUrl": "https://pgonedev.sharepoint.com/Style%20Library/Images/NewsImages/promoteglob.jpg"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "style": "emphasis",
+            "$data": "${pgLocalNews}",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "${title}",
+                    "wrap": true,
+                    "size": "Medium",
+                    "weight": "Bolder"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${newsDescription}",
+                                    "wrap": true,
+                                    "maxLines": 4
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "100px",
+                            "minHeight": "50px",
+                            "backgroundImage": {
+                                "url": "${pgCarouselImage}"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "ActionSet",
+                    "actions": [
+                        {
+                            "type": "Action.OpenUrl",
+                            "title": "Read Full News",
+                            "url": "${pgLink}",
+                            "style": "positive"
+                        },
+                        {
+                            "type": "Action.OpenUrl",
+                            "title": "Source Quick Link",
+                            "url": "${pgQuickLink}",
+                            "$when": "${pgQuickLink != null}",
+                            "style": "destructive"
+                        },
+                        {
+                            "type": "Action.Submit",
+                            "title": "${if(equals(isRequested,true), 'Request initiated for Promote to Global', 'Promote to Global')}",
+                            "data": {
+                                "title": "${title}",
+                                "id": "${id}",
+                                "pageName": "${title}",
+                                "pageURL": "${pgLink}"
+                            },
+                            "isEnabled": "${if(equals(isRequested,true), false, true)}",
+                            "$when": "${pgLocation != 'Global'}",
+                            "iconUrl": "https://pgonedev.sharepoint.com/Style%20Library/Images/NewsImages/promoteglob.jpg"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}
