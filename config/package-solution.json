@@ -3,7 +3,7 @@
   "solution": {
     "name": "PNG-Site-Viva-POCPromoteToGlobNews-solution",
     "id": "c9eaa906-ccb4-4974-a292-4f88743a2b79",
-    "version": "2.2.0.0",
+    "version": "2.3.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

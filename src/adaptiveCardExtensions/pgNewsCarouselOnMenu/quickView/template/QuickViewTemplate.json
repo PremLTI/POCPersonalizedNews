@@ -63,7 +63,7 @@
                         },
                         {
                             "type": "Action.OpenUrl",
-                            "title": "Source Quick Link",
+                            "title": "More Information link",
                             "url": "${pgQuickLink}",
                             "style": "destructive",
                             "$when": "${pgQuickLink != null}"
@@ -135,7 +135,7 @@
                         },
                         {
                             "type": "Action.OpenUrl",
-                            "title": "Source Quick Link",
+                            "title": "More Information link",
                             "url": "${pgQuickLink}",
                             "$when": "${pgQuickLink != null}",
                             "style": "destructive"

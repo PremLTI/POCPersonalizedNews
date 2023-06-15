@@ -50,8 +50,8 @@ export const fetchSitePageLibrary = async (spContext: AdaptiveCardExtensionConte
           pgLocation: listItem.PGLocation,
           pgLink: spContext.pageContext.site.absoluteUrl+listItem.FileRef,
           pgQuickLink :  listItem.ExternalLink ? listItem.ExternalLink.Url : null,
-          pgCarouselImage: listItem.PGNewsImage.Url,
-          newsDescription : listItem.NewsDescription,
+          pgCarouselImage: spContext.pageContext.site.absoluteUrl+ JSON.parse(listItem.PGImage).serverRelativeUrl,
+          newsDescription : listItem.CanvasContent1.replace(/<[^>]+>/g, '').length != 0 ? listItem.CanvasContent1.replace(/<[^>]+>/g, '') : "",
           index: index,
           isRequested: false
         };
